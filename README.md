@@ -1,3 +1,30 @@
+# A REST API in Clojure
+
+origin
+
+[A REST API in Clojure](https://tutswiki.com/rest-api-in-clojure/#google_vignette)
+reference json
+
+```json
+{
+      "id" : "some id",
+      "title" : "some title",
+      "text" : "some text"
+}
+```
+
+## step 1
+initialize the project
+```shell
+lein new compojure clojure-rest
+```
+
+then update project.clj
+
+run the project
+```shell
+lein ring server
+```
 # clojure-rest
 
 FIXME
