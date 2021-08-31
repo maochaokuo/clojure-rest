@@ -26,7 +26,9 @@ run the project
 lein ring server
 ```
 
-
+## change log
+### 2021/8/31
+- 可以印出來了！讚
 
 #
 #

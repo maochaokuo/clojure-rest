@@ -6,7 +6,8 @@
   (:require [compojure.handler :as handler]
             [ring.middleware.json :as middleware]
             [clojure.java.jdbc :as sql]
-            [compojure.route :as route]))
+            [compojure.route :as route]
+            [cheshire.core :as json]))
 
 (def db-config
   {:classname "org.h2.Driver"
@@ -54,10 +55,19 @@
          (empty? results) {:status 404}
          :else (response (first results))))))
 
+(defn request-body->map
+  [request]
+  (-> request
+      ;:body
+      slurp
+      (json/parse-string true)))
+;;(json/parse-string (slurp (:body request)) true)
+
 (defn create-new-document [doc]
   (let [id (uuid)]
     (sql/with-connection (db-connection)
        (let [document (assoc doc "id" id)]
+         (println doc) ; {id 1, title 1a2 title, text 1a2 text} 帥啊！直接印可以
          (sql/insert-record :documents document)))
     (get-document id)))
 
