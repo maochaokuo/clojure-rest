@@ -26,6 +26,9 @@ run the project
 lein ring server
 ```
 
+## open questions or next step
+1. 接下來就改資料庫，可能的話還是用json server
+
 ## change log
 ### 2021/8/31
 - 可以印出來了！讚
