@@ -30,6 +30,11 @@ lein ring server
 1. 接下來就改資料庫，可能的話還是用json server
 
 ## change log
+
+### 2021/9/9
+- 神奇了，這個是好的，kevin mai是壞的
+- 可是這個不能debug，有點難用
+
 ### 2021/8/31
 - 可以印出來了！讚
 

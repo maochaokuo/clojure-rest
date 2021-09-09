@@ -85,7 +85,9 @@
 (defroutes app-routes
  (context "/documents" [] (defroutes documents-routes
    (GET  "/" [] (get-all-documents))
-   (POST "/" {body :body} (create-new-document body))
+   (POST "/" {body :body}
+     (println body)
+     (create-new-document body))
    (context "/:id" [id] (defroutes document-routes
      (GET    "/" [] (get-document id))
      (PUT    "/" {body :body} (update-document id body))
@@ -97,3 +99,6 @@
       (middleware/wrap-json-body)
       (middleware/wrap-json-response)))
 
+(comment
+  (app)
+  )
