@@ -29,6 +29,9 @@ lein ring server
 ## open questions or next step
 1. 接下來就改資料庫，可能的話還是用json server
 
+2. kevin mai 的不能用，這個則不能debug, 能用但不是太理想。不然再
+   把firefox開的tab都試試
+
 ## change log
 
 ### 2021/9/9
