@@ -2,7 +2,9 @@
   :description "REST service for documents"
   :url "https://tutswiki.com"
   :min-lein-version "2.0.0"
+  :source-paths ["src"]
   :dependencies [[org.clojure/clojure "1.10.0"]
+                 [http-kit "2.4.0-alpha6"]
                  [compojure "1.6.1"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-json "0.1.2"]

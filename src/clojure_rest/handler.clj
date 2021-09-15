@@ -7,6 +7,7 @@
             [ring.middleware.json :as middleware]
             [clojure.java.jdbc :as sql]
             [compojure.route :as route]
+            [org.httpkit.server :refer [run-server]]
             [cheshire.core :as json]))
 
 (def db-config
@@ -67,7 +68,7 @@
   (let [id (uuid)]
     (sql/with-connection (db-connection)
        (let [document (assoc doc "id" id)]
-         (println doc) ; {id 1, title 1a2 title, text 1a2 text} 帥啊！直接印可以
+         (println document) ; {id 1, title 1a2 title, text 1a2 text} 帥啊！直接印可以
          (sql/insert-record :documents document)))
     (get-document id)))
 
@@ -99,6 +100,24 @@
       (middleware/wrap-json-body)
       (middleware/wrap-json-response)))
 
+(defonce server (atom nil))
+
+(defn -main []
+  (println "Server started port 4004")
+  (reset! server (run-server app {:port 4004})))
+
+(defn stop-server []
+  (when-not (nil? @server)
+    (@server :timeout 100)
+    (reset! server nil)
+    ;(println "Server stopped")
+    ))
+
+(defn restart-server []
+  (stop-server)
+  (-main))
+
 (comment
+  (restart-server)
   (app)
   )

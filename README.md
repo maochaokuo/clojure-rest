@@ -26,13 +26,20 @@ run the project
 lein ring server
 ```
 
+## step 2
+可以了，YA! 
+
 ## open questions or next step
 1. 接下來就改資料庫，可能的話還是用json server
 
 2. kevin mai 的不能用，這個則不能debug, 能用但不是太理想。不然再
    把firefox開的tab都試試
+   - 搞定了，可以debug了
 
 ## change log
+
+### 2021/9/15
+- 搞定了，可以debug了
 
 ### 2021/9/9
 - 神奇了，這個是好的，kevin mai是壞的
