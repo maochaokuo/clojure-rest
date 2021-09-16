@@ -3,11 +3,13 @@
   (:use compojure.core)
   (:use cheshire.core)
   (:use ring.util.response)
-  (:require [compojure.handler :as handler]
+  (:require [org.httpkit.server :refer [run-server]]
+            [reitit.ring :as ring]
+            [ring.middleware.cors :refer [wrap-cors]]
+            [compojure.handler :as handler]
             [ring.middleware.json :as middleware]
             [clojure.java.jdbc :as sql]
             [compojure.route :as route]
-            [org.httpkit.server :refer [run-server]]
             [cheshire.core :as json]))
 
 (def db-config

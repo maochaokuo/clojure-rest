@@ -29,6 +29,9 @@ lein ring server
 ## step 2
 可以了，YA! 
 
+## step 3, frontend
+1. server side update
+
 ## open questions or next step
 1. 接下來就改資料庫，可能的話還是用json server
 
@@ -37,6 +40,9 @@ lein ring server
    - 搞定了，可以debug了
 
 ## change log
+
+### 2021/9/16
+- server side update for frontend
 
 ### 2021/9/15
 - 搞定了，可以debug了
