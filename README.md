@@ -38,6 +38,8 @@ lein ring server
 2. kevin mai 的不能用，這個則不能debug, 能用但不是太理想。不然再
    把firefox開的tab都試試
    - 搞定了，可以debug了
+   
+3. frontend, kevin mai的接不下去了，沒法設定銜接的url
 
 ## change log
 
